@@ -11,59 +11,46 @@ A full-stack application for comparing and getting recommendations for Samsung p
 - Trade-in value calculator
 - Real-time phone specs and pricing
 
-## Tech Stack
-
-- Frontend: React + TypeScript + Vite
-- Backend: Node.js + Express
-- Database: PostgreSQL (via Neon)
-- AI: OpenAI API
-- Styling: Tailwind CSS + shadcn/ui
-
 ## Prerequisites
 
 - Node.js v20+
-- NPM or Yarn
-- PostgreSQL database
 - OpenAI API key
+- Replit account
 
-## Local Development Setup
+## Complete Setup Guide
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd <project-directory>
-```
+1. **Fork the Repository**
+   - Fork this repl in Replit
 
-2. Install dependencies:
+2. **Install Dependencies**
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
-Create a `.env` file with:
-```
-DATABASE_URL=postgres://user:password@localhost:5432/dbname
-OPENAI_API_KEY=your_openai_api_key
+3. **Set up Environment Variables**
+   - Open the Secrets tab (lock icon)
+   - Add the following secrets:
+     ```
+     OPENAI_API_KEY=your_openai_api_key
+     ```
+
+4. **Database Setup**
+   - Open the "Database" tab in Replit
+   - Click "Create a database"
+   - Wait for the database to be provisioned
+   - The `DATABASE_URL` will be automatically added to your secrets
+
+5. **Push Database Schema**
+```bash
+npm run db:push
 ```
 
-4. Start the development server:
+6. **Start Development Server**
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5000`
-
-## Deployment on Replit
-
-1. Fork this repl in Replit
-2. Add secrets in the Secrets tab:
-   - `DATABASE_URL`: Your PostgreSQL connection string
-   - `OPENAI_API_KEY`: Your OpenAI API key
-3. Click the Run button to start the development server
-4. For production deployment:
-   - Click the "Deploy" button in the Deployments tab
-   - Replit will automatically build and deploy your application
-   - You'll get a `.replit.app` URL for your live application
+The application will be available at the URL shown in the Replit webview.
 
 ## Project Structure
 
@@ -87,6 +74,14 @@ The application will be available at `http://localhost:5000`
 - `POST /api/recommendations` - Get AI-powered recommendations
 - `GET /api/comparisons` - Get popular comparisons
 - `GET /api/guides` - Get feature guides
+
+## Deployment
+
+1. Click the "Deploy" button in the Deployments tab
+2. Replit will automatically:
+   - Build the project
+   - Deploy your application
+   - Provide a `.replit.app` URL
 
 ## Contributing
 
